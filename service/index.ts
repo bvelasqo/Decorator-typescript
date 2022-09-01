@@ -1,9 +1,10 @@
+import { DataSource } from "./DataSource";
 import { CompressionDecorator } from "./SQL/CompressionDecorator";
 import { DataSourceSQL } from "./SQL/DataSourceSQL";
 import { SQLDecorator } from "./SQL/Decorator";
 import { EncryptionDecorator } from "./SQL/EncryptionDecorator";
 
-const sqlDataSource = new DataSourceSQL()
+const sqlDataSource: DataSource = new DataSourceSQL()
 const sqlDataSourceDecorator = new SQLDecorator(sqlDataSource)
 const sqlCompressionDecorator = new CompressionDecorator(sqlDataSourceDecorator)
 const sqlEncryptionDecorator = new EncryptionDecorator(sqlCompressionDecorator)
